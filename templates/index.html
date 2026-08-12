@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moral Orel: El Buscador de Lecciones y Debates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Metamorphous&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>STATESOTA MORAL CENTER</h1>
+        <p class="subtitle">«Aprende tu lección antes de que tu padre vaya al estudio»</p>
+    </header>
+
+    <div class="container">
+        <!-- Pestañas de Navegación -->
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="openTab('vibras')">1. Buscador de Vibras</button>
+            <button class="tab-btn" onclick="openTab('polemista')">2. El Polemista Devoto</button>
+            <button class="tab-btn" onclick="openTab('empaquetador')">3. Empaquetador de Citas</button>
+        </nav>
+
+        <!-- SECCIÓN 1: BUSCADOR DE VIBRAS -->
+        <section id="vibras" class="tab-content active">
+            <h2>Buscador Semántico de Culpas y Vibras</h2>
+            <p>Confiesa tu situación o estado emocional para encontrar el proverbio adecuado:</p>
+            <textarea id="situacionInput" placeholder="Ej: Cometí un error en el trabajo y me da miedo confesar la verdad..."></textarea>
+            <button class="orel-btn" onclick="analizarVibras()">Buscar Consuelo Semántico</button>
+            
+            <div id="vibrasResultados" class="results-container"></div>
+        </section>
+
+        <!-- SECCIÓN 2: POLEMISTA DEBATE -->
+        <section id="polemista" class="tab-content">
+            <h2>El Orador de Debates Teológicos</h2>
+            <p>Haz una pregunta filosófica para recibir un sermón con citas respaldadas:</p>
+            <input type="text" id="preguntaInput" placeholder="¿Es el sufrimiento necesario para ser una buena persona?">
+            <button class="orel-btn" onclick="generarDebate()">Generar Sermón / Ensayo</button>
+
+            <div id="polemistaResultado" class="results-container"></div>
+        </section>
+
+        <!-- SECCIÓN 3: EMPAQUETADOR Y TRADUCTOR -->
+        <section id="empaquetador" class="tab-content">
+            <h2>Empaquetador de Tokens y Traductor (Deep-Translator)</h2>
+            <p>Calcula y optimiza las peticiones de red empaquetando citas traducidas al español:</p>
+            <label for="maxUnits">Límite Máximo de Caracteres por Lote:</label>
+            <input type="number" id="maxUnits" value="250" step="50">
+            <button class="orel-btn" onclick="procesarLotes()">Calcular y Empaquetar Lotes</button>
+
+            <div id="empaquetadorResultado" class="results-container"></div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/moral.js') }}"></script>
+</body>
+</html>
