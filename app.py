@@ -5,6 +5,7 @@ import re
 from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
 from flask import Flask, jsonify, render_template, request
+from flask_cors import CORS
 import pandas as pd
 import requests
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -325,3 +326,7 @@ def empaquetar_y_traducir():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
+
+app = Flask(__name__)
+CORS(app)  # Permite peticiones desde el cliente Vue (ej: http://localhost:5173)
