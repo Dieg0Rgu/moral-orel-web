@@ -10,16 +10,11 @@ import MainContainer from './components/MainContainer.vue'
   </div>
 </template>
 
-<style>
-/* Estilos globales */
-body {
-  margin: 0;
-  background-color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
+<style scoped>
 .app-layout {
-  padding: 2rem 1rem;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
 }
 </style>
